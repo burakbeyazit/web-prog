@@ -68,15 +68,15 @@ export default function RegisterPage() {
       {/* Form Overlay */}
       <div className="relative z-10 bg-white/90 backdrop-blur-lg p-10 rounded-2xl shadow-2xl w-full max-w-lg flex flex-col items-center">
         <div className="flex items-center gap-3 mb-6">
-          <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Logo" className="w-12 h-12" />
-          <span className="text-3xl font-extrabold text-blue-800 tracking-tight">Flower Shop</span>
+          <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Çiçek Dükkanı Logo" className="w-12 h-12" />
+          <span className="text-3xl font-extrabold text-blue-800 tracking-tight">Çiçek Dükkanı</span>
         </div>
-        <h1 className="text-2xl font-bold mb-4 text-center text-blue-700">Create Your Account</h1>
+        <h1 className="text-2xl font-bold mb-4 text-center text-blue-700">Hesap Oluştur</h1>
         <form className="flex flex-col gap-4 w-full" onSubmit={handleSubmit}>
           <div className="flex gap-3">
             <input
               type="text"
-              placeholder="First Name"
+              placeholder="Ad"
               value={firstName}
               onChange={e => setFirstName(e.target.value)}
               className="border border-gray-300 rounded-lg px-4 py-2 w-1/2 focus:outline-none focus:ring-2 focus:ring-blue-300 bg-gray-50"
@@ -84,7 +84,7 @@ export default function RegisterPage() {
             />
             <input
               type="text"
-              placeholder="Last Name"
+              placeholder="Soyad"
               value={lastName}
               onChange={e => setLastName(e.target.value)}
               className="border border-gray-300 rounded-lg px-4 py-2 w-1/2 focus:outline-none focus:ring-2 focus:ring-blue-300 bg-gray-50"
@@ -93,7 +93,7 @@ export default function RegisterPage() {
           </div>
           <input
             type="email"
-            placeholder="Email"
+            placeholder="E-posta"
             value={email}
             onChange={e => setEmail(e.target.value)}
             className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300 bg-gray-50"
@@ -101,7 +101,7 @@ export default function RegisterPage() {
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Şifre"
             value={password}
             onChange={e => setPassword(e.target.value)}
             className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300 bg-gray-50"
@@ -109,14 +109,14 @@ export default function RegisterPage() {
           />
           <input
             type="tel"
-            placeholder="Phone"
+            placeholder="Telefon"
             value={phone}
             onChange={e => setPhone(e.target.value)}
             className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300 bg-gray-50"
           />
           <input
             type="text"
-            placeholder="Address"
+            placeholder="Adres"
             value={address}
             onChange={e => setAddress(e.target.value)}
             className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300 bg-gray-50"
@@ -124,14 +124,14 @@ export default function RegisterPage() {
           <div className="flex gap-3">
             <input
               type="text"
-              placeholder="City"
+              placeholder="Şehir"
               value={city}
               onChange={e => setCity(e.target.value)}
               className="border border-gray-300 rounded-lg px-4 py-2 w-1/2 focus:outline-none focus:ring-2 focus:ring-blue-300 bg-gray-50"
             />
             <input
               type="text"
-              placeholder="Postal Code"
+              placeholder="Posta Kodu"
               value={postalCode}
               onChange={e => setPostalCode(e.target.value)}
               className="border border-gray-300 rounded-lg px-4 py-2 w-1/2 focus:outline-none focus:ring-2 focus:ring-blue-300 bg-gray-50"
@@ -139,7 +139,7 @@ export default function RegisterPage() {
           </div>
           <input
             type="text"
-            placeholder="Country"
+            placeholder="Ülke"
             value={country}
             onChange={e => setCountry(e.target.value)}
             className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300 bg-gray-50"
@@ -149,7 +149,7 @@ export default function RegisterPage() {
             className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition-colors shadow-md disabled:opacity-60 mt-2 text-lg"
             disabled={loading}
           >
-            {loading ? "Registering..." : "Register"}
+            {loading ? "Kayıt olunuyor..." : "Kayıt Ol"}
           </button>
         </form>
         <button
@@ -157,7 +157,7 @@ export default function RegisterPage() {
           type="button"
           onClick={() => router.push('/login')}
         >
-          Already have an account? Login
+          Zaten hesabınız var mı? Giriş Yap
         </button>
         {message && (
           <div className="mt-6 text-center text-base text-blue-700 font-medium">{message}</div>
@@ -169,8 +169,8 @@ export default function RegisterPage() {
                 <circle cx="12" cy="12" r="10" strokeOpacity="0.2" strokeWidth="4" />
                 <path d="M12 2a10 10 0 0 1 10 10" />
               </svg>
-              <div className="text-lg font-semibold text-blue-700 mb-1">You are being redirected...</div>
-              <div className="text-sm text-gray-500">Please wait.</div>
+              <div className="text-lg font-semibold text-blue-700 mb-1">Yönlendiriliyorsunuz...</div>
+              <div className="text-sm text-gray-500">Lütfen bekleyin.</div>
             </div>
           </div>
         )}

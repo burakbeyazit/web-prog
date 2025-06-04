@@ -25,7 +25,6 @@ export default function LoginPage() {
       try {
         data = await response.json();
       } catch (jsonError) {
-        // If not valid JSON, get text
         const text = await response.text();
         setMessage(text || "Bilinmeyen bir hata oluştu. Lütfen tekrar deneyin.");
         setLoading(false);
@@ -82,7 +81,7 @@ export default function LoginPage() {
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
-          alt="Background flowers"
+          alt="Çiçekli arkaplan"
           className="w-full h-full object-cover object-center opacity-40"
           style={{ filter: 'blur(2px)' }}
         />
@@ -91,14 +90,14 @@ export default function LoginPage() {
       {/* Form Overlay */}
       <div className="relative z-10 bg-white/90 backdrop-blur-lg p-10 rounded-2xl shadow-2xl w-full max-w-lg flex flex-col items-center">
         <div className="flex items-center gap-3 mb-6">
-          <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Logo" className="w-12 h-12" />
-          <span className="text-3xl font-extrabold text-blue-800 tracking-tight">Flower Shop</span>
+          <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Çiçek Dükkanı Logo" className="w-12 h-12" />
+          <span className="text-3xl font-extrabold text-blue-800 tracking-tight">Çiçek Dükkanı</span>
         </div>
-        <h1 className="text-2xl font-bold mb-4 text-center text-blue-700">Login to Your Account</h1>
+        <h1 className="text-2xl font-bold mb-4 text-center text-blue-700">Hesabınıza Giriş Yapın</h1>
         <form className="flex flex-col gap-4 w-full" onSubmit={handleSubmit}>
           <input
             type="email"
-            placeholder="Email"
+            placeholder="E-posta"
             value={email}
             onChange={e => setEmail(e.target.value)}
             className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300 bg-gray-50"
@@ -106,7 +105,7 @@ export default function LoginPage() {
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Şifre"
             value={password}
             onChange={e => setPassword(e.target.value)}
             className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300 bg-gray-50"
@@ -117,7 +116,7 @@ export default function LoginPage() {
             className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition-colors shadow-md disabled:opacity-60 mt-2 text-lg"
             disabled={loading}
           >
-            {loading ? "Logging in..." : "Login"}
+            {loading ? "Giriş yapılıyor..." : "Giriş Yap"}
           </button>
         </form>
         <button
@@ -125,7 +124,7 @@ export default function LoginPage() {
           type="button"
           onClick={() => router.push('/register')}
         >
-          Don't have an account? Register
+          Hesabınız yok mu? Kayıt Ol
         </button>
         {message && (
           <div className="mt-6 text-center text-base text-blue-700 font-medium">{message}</div>
@@ -137,8 +136,8 @@ export default function LoginPage() {
                 <circle cx="12" cy="12" r="10" strokeOpacity="0.2" strokeWidth="4" />
                 <path d="M12 2a10 10 0 0 1 10 10" />
               </svg>
-              <div className="text-lg font-semibold text-blue-700 mb-1">You are being redirected...</div>
-              <div className="text-sm text-gray-500">Please wait.</div>
+              <div className="text-lg font-semibold text-blue-700 mb-1">Yönlendiriliyorsunuz...</div>
+              <div className="text-sm text-gray-500">Lütfen bekleyin.</div>
             </div>
           </div>
         )}
